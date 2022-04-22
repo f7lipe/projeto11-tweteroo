@@ -1,0 +1,30 @@
+{
+  "name": "projeto11-tweteroo",
+  "version": "1.0.0",
+  "description": "Primeiro projeto de back-end",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon script.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/f7lipe/projeto11-tweteroo.git"
+  },
+  "keywords": [
+    "back-end"
+  ],
+  "author": "Filipe Correia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/f7lipe/projeto11-tweteroo/issues"
+  },
+  "homepage": "https://github.com/f7lipe/projeto11-tweteroo#readme",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15"
+  }
+}
