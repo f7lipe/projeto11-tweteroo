@@ -26,19 +26,19 @@ app.post('/sign-up', (req, res) => {
         
         user = newUser;
     
-        users = [...users, newUser];
+        users = [...users, newUser]
     
-        res.status(201).send('OK');
+        res.status(201).send('OK')
     }
 
 });
 
 app.post('/tweets', (req, res) => {
 
-    const {body} = req;
+    const {body} = req
 
     if (body.tweet === '') {
-        res.status(400).send('Todos os campos são obrigatórios!');
+        res.status(400).send('Todos os campos são obrigatórios!')
     } else {
         const tweet = {
             username: req.header('user'),
@@ -46,12 +46,23 @@ app.post('/tweets', (req, res) => {
             tweet: body.tweet
         };
     
-        tweets.push(tweet);
+        tweets.push(tweet)
     
-        res.status(201).send('OK');
+        res.status(201).send('OK')
     }
     
 });
 
+app.get('/tweets', (req, res) => {
+
+    const lastTweets = [] //para armazenar os ultimos 10 tweets
+
+    for (let index = tweets.length - 1; index >= 0; index--) {
+        if (lastTweets.length === 10) break
+        else lastTweets.push(tweets[index])
+    }
+
+    res.send(lastTweets);
+})
 
 app.listen(5000)
