@@ -33,6 +33,25 @@ app.post('/sign-up', (req, res) => {
 
 });
 
+app.post('/tweets', (req, res) => {
+
+    const {body} = req;
+
+    if (body.tweet === '') {
+        res.status(400).send('Todos os campos são obrigatórios!');
+    } else {
+        const tweet = {
+            username: req.header('user'),
+            avatar: user.avatar,
+            tweet: body.tweet
+        };
+    
+        tweets.push(tweet);
+    
+        res.status(201).send('OK');
+    }
+    
+});
 
 
 app.listen(5000)
